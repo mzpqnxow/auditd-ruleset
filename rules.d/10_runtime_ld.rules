@@ -1,0 +1,3 @@
+# Monitor config for shared library loading for lame .so rootkits
+-w /etc/ld.so.conf -p wa
+-w /etc/ld.so.conf.d/ -p wa
