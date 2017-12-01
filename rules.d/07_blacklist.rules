@@ -1,0 +1,3 @@
+# Blacklist specific events
+# -A exit,never -F path=/bin/stty -F perm=x
+# -A exit,never -F path=/usr/bin/tty -F perm=x
