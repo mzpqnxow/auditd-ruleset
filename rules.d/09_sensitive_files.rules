@@ -1,0 +1,2 @@
+# Watch for all access to a specific file
+# -w /path/to/secret/keys.tar -p rwxa -k sacred-file-access-audit
