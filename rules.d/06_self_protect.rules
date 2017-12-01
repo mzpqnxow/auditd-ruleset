@@ -1,0 +1,5 @@
+# Record changes to audit config
+-w /etc/audit/ -p wa -k selfprotect-audit
+-w /etc/audisp/ -p wa -k selfprotect-audit
+-w /etc/sysconfig/auditd -p wa -k selfprotect-audit
+-w /etc/libaudit.conf -p wa -k selfprotect-audit
