@@ -1,3 +1,9 @@
 # System wide rule for logging euid/uid mismatch, indicative of setuid
 -a always,exit -F arch=b64 -C auid!=uid -S execve -k setuid-exec-audit
 -a always,exit -F arch=b32 -C auid!=uid -S execve -k setuid-exec-audit
+
+# Reliably catch setuid exec and log separately when a set*uid call is denied
+-a always,exit -F arch=b64 -S setuid -S setgid -S setreuid -S setregid -k suid-ok-audit
+-a always,exit -F arch=b32 -S setuid -S setgid -S setreuid -S setregid -k suid-ok-audit
+-a always,exit -F arch=b64 -S setuid -S setgid -S setreuid -S setregid -F exit=EPERM -k suid-denied-audit
+-a always,exit -F arch=b32 -S setuid -S setgid -S setreuid -S setregid -F exit=EPERM -k suid-denied-audit
