@@ -6,5 +6,7 @@
 -i
 # Rate limit to 1000 msg/sec
 -r 1000
-# Enable auditd auditing
+# Enable auditd
 -e 1
+# Lock auditd "on", only a reboot can disable
+# -e 2
