@@ -1,0 +1,39 @@
+#
+# List of rules for per-user system call auditing
+#
+# - Execute (execve)
+# - Socket functions (connect, listen, accept, socketpair, accept4)
+# - Process/thread create (fork, clone, vfork)
+# - File delete (unlink, unlinkat)
+# - File access (open, openat)
+#
+# Change the uid value to the user you are interested in auditing
+#
+
+-a exit,always -F arch=b64 -F uid=12345 -S execve -k keyword-exec-audit
+-a exit,always -F arch=b32 -F uid=12345 -S execve -k keyword-exec-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S socketcall -F a0=3 -k keyword-connect-audit # connect
+-a exit,always -F arch=b32 -F uid=12345 -S socketcall -F a0=3 -k keyword-connect-audit # connect
+
+-a exit,always -F arch=b64 -F uid=12345 -S socketcall -F a0=4 -k keyword-listen-audit # listen
+-a exit,always -F arch=b32 -F uid=12345 -S socketcall -F a0=4 -k keyword-listen-audit # listen
+
+-a exit,always -F arch=b64 -F uid=12345 -S socketcall -F a0=5 -k keyword-accept-audit # accept
+-a exit,always -F arch=b32 -F uid=12345 -S socketcall -F a0=5 -k keyword-accept-audit # accept
+
+-a exit,always -F arch=b64 -F uid=12345 -S socketcall -F a0=8 -k keyword-socketpair-audit # socketpair
+-a exit,always -F arch=b32 -F uid=12345 -S socketcall -F a0=8 -k keyword-socketpair-audit # socketpair
+
+-a exit,always -F arch=b64 -F uid=12345 -S socketcall -F a0=18 -k keyword-accept-audit # accept4
+-a exit,always -F arch=b32 -F uid=12345 -S socketcall -F a0=18 -k keyword-accept-audit # accept4
+
+-a exit,always -F arch=b64 -F uid=12345 -S fork -S vfork -S clone -k keyword-process-create-audit
+-a exit,always -F arch=b32 -F uid=12345 -S fork -S vfork -S clone -k keyword-process-create-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S fork -S unlink -S unlinkat -k keyword-file-delete-audit
+-a exit,always -F arch=b32 -F uid=12345 -S fork -S unlink -S unlinkat -k keyword-file-delete-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S open -S openat -k keyword-file-open-audit
+-a exit,always -F arch=b32 -F uid=12345 -S open -S openat -k keyword-file-open-audit
+
