@@ -1,0 +1,8 @@
+# Audit syscalls associated with Linux namespace functionality
+# This may be problematic if you're using Docker
+#
+# Note that clone is not monitored here as it is covered under
+# process creation. It probably should be, though
+#
+-a always,exit -F arch=b32 -S setns -S unshare -k namespace-audit
+-a always,exit -F arch=b32 -S setns -S unshare -k namespace-audit
