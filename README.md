@@ -3,4 +3,4 @@ This is an auditd based ruleset for carefully monitoring user accounts. Useful w
 
 # How to handle log output
 
-Take a look at (audisp-json)[https://github.com/gdestuynder/audisp-json] and consider streaming into logstash
+Take a look at [audisp-json](https://github.com/gdestuynder/audisp-json) and consider streaming into logstash
