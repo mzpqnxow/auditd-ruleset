@@ -1,0 +1,7 @@
+# Record changes to system binaries
+-w /usr/bin -p wa -k write-append-sysbin-audit
+-w /bin -p wa -k write-append-sysbin-audit
+-w /usr/sbin -p wa -k write-append-sysbin-audit
+-w /sbin -p wa -k write-append-sysbin-audit
+-w /usr/local/bin -p wa -k write-append-sysbin-audit
+-w /usr/local/sbin -p wa -k write-append-sysbin-audit
