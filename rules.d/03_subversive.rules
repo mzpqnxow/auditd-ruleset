@@ -1,0 +1,3 @@
+# bypass syscalls
+-a always,exit -F arch=b64 -S personality -k bypass-audit
+-a always,exit -F arch=b32 -S personality -k bypass-audit

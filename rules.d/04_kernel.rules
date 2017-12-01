@@ -1,0 +1,7 @@
+# LKM loading
+-a exit,always -F arch=b64 -S init_module -k lkm-audit
+-a exit,always -F arch=b32 -S init_module -k lkm-audit
+
+# Use of kexec syscall to reexecute a kernel in place
+-a exit,always -F arch=b64 -S kexec_load -k kexec-audit
+-a exit,always -F arch=b32 -S kexec_load -k kexec-audit

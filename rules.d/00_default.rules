@@ -1,0 +1,8 @@
+# Delete all rules
+-D
+# Maximum amount of kernel buffers
+-b 16384
+# Ignore loading errors, in case file path do not exist
+-i
+# Rate limit to 1000 msg/sec
+-r 1000
