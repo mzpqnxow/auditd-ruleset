@@ -1,3 +1,5 @@
 # Blacklist specific events
-# -A exit,never -F path=/bin/stty -F perm=x
-# -A exit,never -F path=/usr/bin/tty -F perm=x
+-A exit,never -F path=/bin/cat -F perm=x
+-A exit,never -F path=/usr/bin/awk -F perm=x
+-A exit,never -F path=/usr/bin/sed -F perm=x
+-A exit,never -F path=/bin/hostname -F perm=x
