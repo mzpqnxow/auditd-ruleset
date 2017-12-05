@@ -1,5 +1,8 @@
 
--A exit,never -F path=/bin/cat -F perm=x
+-A exit,never -F path=/usr/bin/dirname -F perm=x
+-A exit,never -F path=/usr/bin/dircolors -F perm=x
+-A exit,never -F path=/usr/bin/getopt -F perm=x
+-A exit,never -F path=/usr/bin/getent -F perm=x
 -A exit,never -F path=/bin/date -F perm=x
 -A exit,never -F path=/bin/egrep -F perm=x
 -A exit,never -F path=/bin/grep -F perm=x
