@@ -1,5 +1,28 @@
-# Blacklist specific events
+
 -A exit,never -F path=/bin/cat -F perm=x
--A exit,never -F path=/usr/bin/awk -F perm=x
--A exit,never -F path=/usr/bin/sed -F perm=x
+-A exit,never -F path=/bin/date -F perm=x
+-A exit,never -F path=/bin/egrep -F perm=x
+-A exit,never -F path=/bin/grep -F perm=x
 -A exit,never -F path=/bin/hostname -F perm=x
+-A exit,never -F path=/bin/mktemp -F perm=x
+-A exit,never -F path=/bin/sed -F perm=x
+-A exit,never -F path=/bin/uname -F perm=x
+-A exit,never -F path=/usr/bin/awk -F perm=x
+-A exit,never -F path=/usr/bin/basename -F perm=x
+-A exit,never -F path=/usr/bin/cmp -F perm=x
+-A exit,never -F path=/usr/bin/cut -F perm=x
+-A exit,never -F path=/usr/bin/env -F perm=x
+-A exit,never -F path=/usr/bin/expr -F perm=x
+-A exit,never -F path=/usr/bin/flock -F perm=x
+-A exit,never -F path=/usr/bin/groff -F perm=x
+-A exit,never -F path=/usr/bin/grotty -F perm=x
+-A exit,never -F path=/usr/bin/groups -F perm=x
+-A exit,never -F path=/usr/bin/lesspipe -F perm=x
+-A exit,never -F path=/usr/bin/locale -F perm=x
+-A exit,never -F path=/usr/bin/mesg -F perm=x
+-A exit,never -F path=/usr/bin/nroff -F perm=x
+-A exit,never -F path=/usr/bin/pager -F perm=x
+-A exit,never -F path=/usr/bin/sed -F perm=x
+-A exit,never -F path=/usr/bin/stat -F perm=x
+-A exit,never -F path=/usr/bin/which -F perm=x
+# Blacklist specific events
