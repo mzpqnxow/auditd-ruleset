@@ -1,4 +1,5 @@
-
+# Blacklist specific events
+-A exit,never -F path=/usr/bin/readlink -F perm=x
 -A exit,never -F path=/usr/bin/dirname -F perm=x
 -A exit,never -F path=/usr/bin/dircolors -F perm=x
 -A exit,never -F path=/usr/bin/getopt -F perm=x
@@ -28,4 +29,3 @@
 -A exit,never -F path=/usr/bin/sed -F perm=x
 -A exit,never -F path=/usr/bin/stat -F perm=x
 -A exit,never -F path=/usr/bin/which -F perm=x
-# Blacklist specific events
