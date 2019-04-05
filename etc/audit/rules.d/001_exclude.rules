@@ -64,6 +64,7 @@
 -a exclude,always -F msgtype=DEV_ALLOC
 -a exclude,always -F msgtype=DEV_DEALLOC
 -a exclude,always -F msgtype=EOE
+# Needed for process execution auditing
 # -a exclude,always -F msgtype=EXECVE
 -a exclude,always -F msgtype=FD_PAIR
 -a exclude,always -F msgtype=FS_RELABEL
@@ -100,6 +101,7 @@
 -a exclude,always -F msgtype=NETFILTER_CFG
 -a exclude,always -F msgtype=NETFILTER_PKT
 -a exclude,always -F msgtype=OBJ_PID
+# PATH messages are useful context
 # -a exclude,always -F msgtype=PATH
 -a exclude,always -F msgtype=RESP_ACCT_LOCK
 -a exclude,always -F msgtype=RESP_ACCT_LOCK_TIMED
@@ -128,6 +130,7 @@
 -a exclude,always -F msgtype=SYSTEM_SHUTDOWN
 -a exclude,always -F msgtype=TEST
 -a exclude,always -F msgtype=TRUSTED_APP
+# May be used by/with pam_audit_tty
 # -a exclude,always -F msgtype=TTY
 -a exclude,always -F msgtype=USER_ACCT
 -a exclude,always -F msgtype=USER_END
@@ -139,6 +142,7 @@
 -a exclude,always -F msgtype=USER_ROLE_CHANGE
 -a exclude,always -F msgtype=USER_SELINUX_ERR
 -a exclude,always -F msgtype=USER_START
+# May be used by/with pam_audit_tty
 # -a exclude,always -F msgtype=USER_TTY
 -a exclude,always -F msgtype=USER_UNLABELED_EXPORT
 -a exclude,always -F msgtype=USYS_CONFIG

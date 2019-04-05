@@ -1,0 +1,7 @@
+# /dev/shm is a ramdisk, great to operate from for an attacker since
+# contents are lost on a reboot. Some high-performance applications
+# do utilize it though so it may have to be tuned
+-a exit,never -F arch=b32 -F dir=/dev/shm -k antiforensics-audit
+-a exit,never -F arch=b64 -F dir=/dev/shm -k antiforensics-audit
+# attackers use dd to securely wipe files
+-w /usr/bin/dd -p x -k antiforensics-audit

@@ -1,0 +1,11 @@
+-a always,exit -F arch=b32 -S ptrace -k process-tampering-audit
+-a always,exit -F arch=b64 -S ptrace -k process-tampering-audit
+# Poke text
+-a always,exit -F arch=b32 -S ptrace -F a0=0x4 -k process-tampering-text-write-audit
+-a always,exit -F arch=b64 -S ptrace -F a0=0x4 -k process-tampering-text-write-audit
+# Poke data
+-a always,exit -F arch=b32 -S ptrace -F a0=0x5 -k process-tampering-data-write-audit
+-a always,exit -F arch=b64 -S ptrace -F a0=0x5 -k process-tampering-data-write-audit
+# Poke regs
+-a always,exit -F arch=b32 -S ptrace -F a0=0x6 -k process-tampering-register-access-audit
+-a always,exit -F arch=b64 -S ptrace -F a0=0x6 -k process-tampering-register-access-audit 

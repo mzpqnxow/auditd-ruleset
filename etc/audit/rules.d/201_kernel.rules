@@ -1,0 +1,9 @@
+# LKM loading / unloading via userspace apps and system calls
+-a always,exit -F perm=x -F auid!=-1 -F path=/sbin/insmod -k lkm-userspace-audit
+-a always,exit -F perm=x -F auid!=-1 -F path=/sbin/modprobe -k lkm-userspace-audit
+-a always,exit -F perm=x -F auid!=-1 -F path=/sbin/rmmod -k lkm-userspace-audit
+-a always,exit -F arch=b64 -S finit_module -S init_module -S delete_module -k lkm-syscall-audit
+-a always,exit -F arch=b32 -S finit_module -S init_module -S delete_module -k lkm-syscall-audit
+# Use of kexec syscall to reexecute a kernel in place
+-a exit,always -F arch=b64 -S kexec_load -k kexec-audit
+-a exit,always -F arch=b32 -S kexec_load -k kexec-audit

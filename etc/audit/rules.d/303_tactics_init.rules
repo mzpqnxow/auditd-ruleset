@@ -1,0 +1,2 @@
+# On disk init infection, in memory should be caught via ptrace system call
+-w /sbin/init -k init-tampering-audit
