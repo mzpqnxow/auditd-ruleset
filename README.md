@@ -7,4 +7,4 @@ Take a look at [audisp-json](https://github.com/gdestuynder/audisp-json) and con
 
 ## Quick guide to setting up audisp-json
 
-
+Just look at all of the files in the repository, they are placed as they would need to be if on a system. And of course, build and install audisp-json ...
