@@ -1,0 +1,5 @@
+# -a exit,always -F arch=b64 -F uid=12345 -S fork -S unlink -S rmdir -S unlinkat -k keyword-file-delete-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S fork -S unlink -S rmdir -S unlinkat -k keyword-file-delete-audit
+
+# -a exit,always -F arch=b64 -F uid=12345 -S open -S openat -k keyword-file-open-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S open -S openat -k keyword-file-open-audit
