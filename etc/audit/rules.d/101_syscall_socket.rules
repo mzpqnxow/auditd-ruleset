@@ -1,33 +1,21 @@
-# PF_RAW == 3
+# PF_RAW == 3 (Raw Socket, requires CAP_NET_RAW or root access)
 -a exit,always -F arch=b64 -F uid=12345 -S socket -F a1=3 -k keyword-socket-raw-socket-audit
 -a exit,always -F arch=b32 -F uid=12345 -S socket -F a1=3 -k keyword-socket-raw-socket-audit
 
-# PF_INET == 2
+# PF_INET == 2 (IPv4)
 -a exit,always -F arch=b64 -F uid=12345 -S socket -F a1=2 -k keyword-socket-ip4-socket-audit
 -a exit,always -F arch=b32 -F uid=12345 -S socket -F a1=2 -k keyword-socket-ip4-socket-audit
 
-# PF_INET6 == 10
+# PF_INET6 == 10 (IPv6)
 -a exit,always -F arch=b64 -F uid=12345 -S socket -F a1=10 -k keyword-socket-ip6-socket-audit
 -a exit,always -F arch=b32 -F uid=12345 -S socket -F a1=10 -k keyword-socket-ip6-socket-audit
 
-# PF_UNIX == 1
+# PF_UNIX == 1 (UNIX IPC)
 # -a exit,always -F arch=b64 -F uid=12345 -S socket -F a1=1 -k keyword-socket-unix-socket-audit
 # -a exit,always -F arch=b32 -F uid=12345 -S socket -F a1=1 -k keyword-socket-unix-socket-audit
 
 -a exit,always -F arch=b64 -F uid=12345 -S socket -k keyword-socket-unknown-socket-audit
 -a exit,always -F arch=b32 -F uid=12345 -S socket -k keyword-socket-unknown-socket-audit
-
-# Not very useful and extremely noisy, even if targeted to a single uid
-# -a exit,always -F arch=b64 -F uid=12345 -S sendto -k keyword-socket-sendto-audit
-# -a exit,always -F arch=b32 -F uid=12345 -S sendto -k keyword-socket-sendto-audit
-# -a exit,always -F arch=b64 -F uid=12345 -S recvfrom -k keyword-socket-recvfrom-audit
-# -a exit,always -F arch=b32 -F uid=12345 -S recvfrom -k keyword-socket-recvfrom-audit
-# -a exit,always -F arch=b64 -F uid=12345 -S send -k keyword-socket-send-audit
-# -a exit,always -F arch=b32 -F uid=12345 -S send -k keyword-socket-send-audit
-# -a exit,always -F arch=b64 -F uid=12345 -S recv -k keyword-socket-recv-audit
-# -a exit,always -F arch=b32 -F uid=12345 -S recv -k keyword-socket-recv-audit
-# -a exit,always -F arch=b64 -F uid=12345 -S recv -k keyword-socket-recv-audit
-# -a exit,always -F arch=b32 -F uid=12345 -S recv -k keyword-socket-recv-audit
 
 -a exit,always -F arch=b64 -F uid=12345 -S connect -k keyword-socket-connect-audit
 -a exit,always -F arch=b32 -F uid=12345 -S connect -k keyword-socket-connect-audit
@@ -46,4 +34,18 @@
 
 -a exit,always -F arch=b64 -F uid=12345 -S accept4 -k keyword-socket-accept-audit
 -a exit,always -F arch=b32 -F uid=12345 -S accept4 -k keyword-socket-accept-audit
+
+# Not very useful and extremely noisy, even if targeted to a single uid
+# -a exit,always -F arch=b64 -F uid=12345 -S sendto -k keyword-socket-sendto-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S sendto -k keyword-socket-sendto-audit
+# -a exit,always -F arch=b64 -F uid=12345 -S recvfrom -k keyword-socket-recvfrom-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S recvfrom -k keyword-socket-recvfrom-audit
+# -a exit,always -F arch=b64 -F uid=12345 -S send -k keyword-socket-send-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S send -k keyword-socket-send-audit
+# -a exit,always -F arch=b64 -F uid=12345 -S recv -k keyword-socket-recv-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S recv -k keyword-socket-recv-audit
+# -a exit,always -F arch=b64 -F uid=12345 -S recv -k keyword-socket-recv-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S recv -k keyword-socket-recv-audit
+
+
 
