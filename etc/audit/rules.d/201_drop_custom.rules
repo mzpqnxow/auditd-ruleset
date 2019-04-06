@@ -1,4 +1,2 @@
 # Maybe you want to filter out some proprietary apps depending on your production system config
-# -A exit,never -F path=/opt/Tanium/TaniumClient/TaniumClient -F perm=x
-# -A exit,never -F path=/opt/HPOV/bin/openv -F perm=x
-
+# -A exit,never -F path=/opt/Product/ProductClient/ProductClient -F perm=x
