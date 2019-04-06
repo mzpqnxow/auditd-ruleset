@@ -28,8 +28,11 @@
 # -a exit,always -F arch=b64 -F uid=12345 -S socket -F a0=18 -k keyword-accept-audit # accept4
 # -a exit,always -F arch=b32 -F uid=12345 -S socket -F a0=18 -k keyword-accept-audit # accept4
 
--a exit,always -F arch=b64 -F uid=12345 -S fork -S vfork -S clone -k keyword-process-create-audit
--a exit,always -F arch=b32 -F uid=12345 -S fork -S vfork -S clone -k keyword-process-create-audit
+-a exit,always -F arch=b64 -F uid=12345 -S clone -k keyword-process-clone-audit
+-a exit,always -F arch=b32 -F uid=12345 -S clone -k keyword-process-clone-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S fork -S vfork -k keyword-process-create-audit
+-a exit,always -F arch=b32 -F uid=12345 -S fork -S vfork -k keyword-process-create-audit
 
 -a exit,always -F arch=b64 -F uid=12345 -S fork -S unlink -S rmdir -S unlinkat -k keyword-file-delete-audit
 -a exit,always -F arch=b32 -F uid=12345 -S fork -S unlink -S rmdir -S unlinkat -k keyword-file-delete-audit
