@@ -1,0 +1,18 @@
+-a exit,always -F arch=b64 -F uid=12345 -S connect -k keyword-socket-connect-audit
+-a exit,always -F arch=b32 -F uid=12345 -S connect -k keyword-socket-connect-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S listen -k keyword-socket-listen-audit
+-a exit,always -F arch=b32 -F uid=12345 -S listen -k keyword-socket-listen-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S bind -k keyword-socket-bind-audit
+-a exit,always -F arch=b32 -F uid=12345 -S bind -k keyword-socket-bind-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S accept -k keyword-socket-accept-audit
+-a exit,always -F arch=b32 -F uid=12345 -S accept -k keyword-socket-accept-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S socketpair -k keyword-socket-socketpair-audit
+-a exit,always -F arch=b32 -F uid=12345 -S socketpair -k keyword-socket-socketpair-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S accept4 -k keyword-socket-accept-audit
+-a exit,always -F arch=b32 -F uid=12345 -S accept4 -k keyword-socket-accept-audit
+

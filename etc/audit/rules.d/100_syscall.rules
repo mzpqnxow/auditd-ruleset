@@ -13,21 +13,6 @@
 -a exit,always -F arch=b64 -F uid=12345 -S execve -k keyword-exec-audit
 -a exit,always -F arch=b32 -F uid=12345 -S execve -k keyword-exec-audit
 
-# -a exit,always -F arch=b64 -F uid=12345 -S socket -F a0=3 -k keyword-connect-audit # connect
-# -a exit,always -F arch=b32 -F uid=12345 -S socket -F a0=3 -k keyword-connect-audit # connect
-
-# -a exit,always -F arch=b64 -F uid=12345 -S socket -F a0=4 -k keyword-listen-audit # listen
-# -a exit,always -F arch=b32 -F uid=12345 -S socket -F a0=4 -k keyword-listen-audit # listen
-
-# -a exit,always -F arch=b64 -F uid=12345 -S socket -F a0=5 -k keyword-accept-audit # accept
-# -a exit,always -F arch=b32 -F uid=12345 -S socket -F a0=5 -k keyword-accept-audit # accept
-
-# -a exit,always -F arch=b64 -F uid=12345 -S socket -F a0=8 -k keyword-socketpair-audit # socketpair
-# -a exit,always -F arch=b32 -F uid=12345 -S socket -F a0=8 -k keyword-socketpair-audit # socketpair
-
-# -a exit,always -F arch=b64 -F uid=12345 -S socket -F a0=18 -k keyword-accept-audit # accept4
-# -a exit,always -F arch=b32 -F uid=12345 -S socket -F a0=18 -k keyword-accept-audit # accept4
-
 -a exit,always -F arch=b64 -F uid=12345 -S clone -k keyword-process-clone-audit
 -a exit,always -F arch=b32 -F uid=12345 -S clone -k keyword-process-clone-audit
 
