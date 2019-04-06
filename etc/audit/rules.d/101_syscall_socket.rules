@@ -1,3 +1,15 @@
+-a exit,always -F arch=b64 -F uid=12345 -S socket -k keyword-socket-socket-audit
+-a exit,always -F arch=b32 -F uid=12345 -S socket -k keyword-socket-socket-audit
+
+-a exit,always -F arch=b64 -F uid=12345 -S socket -F a1=3 -k keyword-socket-raw-socket-audit
+-a exit,always -F arch=b32 -F uid=12345 -S socket -F a1=3 -k keyword-socket-raw-socket-audit
+
+# -a exit,always -F arch=b64 -F uid=12345 -S sendto -k keyword-socket-sendto-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S sendto -k keyword-socket-sendto-audit
+
+# -a exit,always -F arch=b64 -F uid=12345 -S recvfrom -k keyword-socket-recvfrom-audit
+# -a exit,always -F arch=b32 -F uid=12345 -S recvfrom -k keyword-socket-recvfrom-audit
+
 -a exit,always -F arch=b64 -F uid=12345 -S connect -k keyword-socket-connect-audit
 -a exit,always -F arch=b32 -F uid=12345 -S connect -k keyword-socket-connect-audit
 
