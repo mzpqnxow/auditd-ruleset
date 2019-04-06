@@ -1,0 +1,150 @@
+# Disable all msg types except those usefull with system call auditing
+# Currently, the following are *NOT* disabled (+ a few more, see below)
+#
+# CWD: used by execve system call logging
+# PATH: used by execve system call logging
+# EXECVE: used by execve system call logging
+# SYSCALL: used by execve system call logging
+# TTY: used by pam_tty_audit logging
+# USER_TTY: used by pam_tty_audit logging
+#
+-a exclude,always -F msgtype=ADD_GROUP
+-a exclude,always -F msgtype=ADD_USER
+-a exclude,always -F msgtype=ANOM_ABEND
+-a exclude,always -F msgtype=ANOM_ACCESS_FS
+-a exclude,always -F msgtype=ANOM_ADD_ACCT
+-a exclude,always -F msgtype=ANOM_AMTU_FAIL
+-a exclude,always -F msgtype=ANOM_CRYPTO_FAIL
+-a exclude,always -F msgtype=ANOM_DEL_ACCT
+-a exclude,always -F msgtype=ANOM_EXEC
+-a exclude,always -F msgtype=ANOM_LOGIN_ACCT
+-a exclude,always -F msgtype=ANOM_LOGIN_FAILURES
+-a exclude,always -F msgtype=ANOM_LOGIN_LOCATION
+-a exclude,always -F msgtype=ANOM_LOGIN_SESSIONS
+-a exclude,always -F msgtype=ANOM_LOGIN_TIME
+-a exclude,always -F msgtype=ANOM_MAX_DAC
+-a exclude,always -F msgtype=ANOM_MAX_MAC
+-a exclude,always -F msgtype=ANOM_MK_EXEC
+-a exclude,always -F msgtype=ANOM_MOD_ACCT
+-a exclude,always -F msgtype=ANOM_PROMISCUOUS
+-a exclude,always -F msgtype=ANOM_RBAC_FAIL
+-a exclude,always -F msgtype=ANOM_RBAC_INTEGRITY_FAIL
+-a exclude,always -F msgtype=ANOM_ROOT_TRANS
+-a exclude,always -F msgtype=AVC
+-a exclude,always -F msgtype=AVC_PATH
+-a exclude,always -F msgtype=BPRM_FCAPS
+-a exclude,always -F msgtype=CAPSET
+-a exclude,always -F msgtype=CHGRP_ID
+-a exclude,always -F msgtype=CHUSER_ID
+-a exclude,always -F msgtype=CONFIG_CHANGE
+-a exclude,always -F msgtype=CRED_ACQ
+-a exclude,always -F msgtype=CRED_DISP
+-a exclude,always -F msgtype=CRED_REFR
+-a exclude,always -F msgtype=CRYPTO_FAILURE_USER
+-a exclude,always -F msgtype=CRYPTO_KEY_USER
+-a exclude,always -F msgtype=CRYPTO_LOGIN
+-a exclude,always -F msgtype=CRYPTO_LOGOUT
+-a exclude,always -F msgtype=CRYPTO_PARAM_CHANGE_USER
+-a exclude,always -F msgtype=CRYPTO_REPLAY_USER
+-a exclude,always -F msgtype=CRYPTO_SESSION
+-a exclude,always -F msgtype=CRYPTO_TEST_USER
+# -a exclude,always -F msgtype=CWD
+-a exclude,always -F msgtype=DAC_CHECK
+-a exclude,always -F msgtype=DAEMON_ABORT
+-a exclude,always -F msgtype=DAEMON_ACCEPT
+-a exclude,always -F msgtype=DAEMON_CLOSE
+-a exclude,always -F msgtype=DAEMON_CONFIG
+-a exclude,always -F msgtype=DAEMON_END
+-a exclude,always -F msgtype=DAEMON_RESUME
+-a exclude,always -F msgtype=DAEMON_ROTATE
+-a exclude,always -F msgtype=DAEMON_START
+-a exclude,always -F msgtype=DEL_GROUP
+-a exclude,always -F msgtype=DEL_USER
+-a exclude,always -F msgtype=DEV_ALLOC
+-a exclude,always -F msgtype=DEV_DEALLOC
+-a exclude,always -F msgtype=EOE
+# Needed for process execution auditing
+# -a exclude,always -F msgtype=EXECVE
+-a exclude,always -F msgtype=FD_PAIR
+-a exclude,always -F msgtype=FS_RELABEL
+-a exclude,always -F msgtype=GRP_AUTH
+-a exclude,always -F msgtype=INTEGRITY_DATA
+-a exclude,always -F msgtype=INTEGRITY_HASH
+-a exclude,always -F msgtype=INTEGRITY_METADATA
+-a exclude,always -F msgtype=INTEGRITY_PCR
+-a exclude,always -F msgtype=INTEGRITY_RULE
+-a exclude,always -F msgtype=INTEGRITY_STATUS
+-a exclude,always -F msgtype=IPC
+-a exclude,always -F msgtype=IPC_SET_PERM
+# -a exclude,always -F msgtype=KERNEL
+# -a exclude,always -F msgtype=KERNEL_OTHER
+-a exclude,always -F msgtype=LABEL_LEVEL_CHANGE
+-a exclude,always -F msgtype=LABEL_OVERRIDE
+-a exclude,always -F msgtype=LOGIN
+-a exclude,always -F msgtype=MAC_CIPSOV4_ADD
+-a exclude,always -F msgtype=MAC_CIPSOV4_DEL
+-a exclude,always -F msgtype=MAC_CONFIG_CHANGE
+-a exclude,always -F msgtype=MAC_IPSEC_EVENT
+-a exclude,always -F msgtype=MAC_MAP_ADD
+-a exclude,always -F msgtype=MAC_MAP_DEL
+-a exclude,always -F msgtype=MAC_POLICY_LOAD
+-a exclude,always -F msgtype=MAC_STATUS
+-a exclude,always -F msgtype=MAC_UNLBL_ALLOW
+-a exclude,always -F msgtype=MAC_UNLBL_STCADD
+-a exclude,always -F msgtype=MAC_UNLBL_STCDEL
+-a exclude,always -F msgtype=MMAP
+-a exclude,always -F msgtype=MQ_GETSETATTR
+-a exclude,always -F msgtype=MQ_NOTIFY
+-a exclude,always -F msgtype=MQ_OPEN
+-a exclude,always -F msgtype=MQ_SENDRECV
+-a exclude,always -F msgtype=NETFILTER_CFG
+-a exclude,always -F msgtype=NETFILTER_PKT
+-a exclude,always -F msgtype=OBJ_PID
+# PATH messages are useful context
+# -a exclude,always -F msgtype=PATH
+-a exclude,always -F msgtype=RESP_ACCT_LOCK
+-a exclude,always -F msgtype=RESP_ACCT_LOCK_TIMED
+-a exclude,always -F msgtype=RESP_ACCT_REMOTE
+-a exclude,always -F msgtype=RESP_ACCT_UNLOCK_TIMED
+-a exclude,always -F msgtype=RESP_ALERT
+-a exclude,always -F msgtype=RESP_ANOMALY
+-a exclude,always -F msgtype=RESP_EXEC
+-a exclude,always -F msgtype=RESP_HALT
+-a exclude,always -F msgtype=RESP_KILL_PROC
+-a exclude,always -F msgtype=RESP_SEBOOL
+-a exclude,always -F msgtype=RESP_SINGLE
+-a exclude,always -F msgtype=RESP_TERM_ACCESS
+-a exclude,always -F msgtype=RESP_TERM_LOCK
+-a exclude,always -F msgtype=ROLE_ASSIGN
+-a exclude,always -F msgtype=ROLE_MODIFY
+-a exclude,always -F msgtype=ROLE_REMOVE
+-a exclude,always -F msgtype=SELINUX_ERR
+-a exclude,always -F msgtype=SERVICE_START
+-a exclude,always -F msgtype=SERVICE_STOP
+-a exclude,always -F msgtype=SOCKADDR
+# -a exclude,always -F msgtype=SOCKETCALL
+# -a exclude,always -F msgtype=SYSCALL
+-a exclude,always -F msgtype=SYSTEM_BOOT
+-a exclude,always -F msgtype=SYSTEM_RUNLEVEL
+-a exclude,always -F msgtype=SYSTEM_SHUTDOWN
+-a exclude,always -F msgtype=TEST
+-a exclude,always -F msgtype=TRUSTED_APP
+# May be used by/with pam_audit_tty
+# -a exclude,always -F msgtype=TTY
+-a exclude,always -F msgtype=USER_ACCT
+-a exclude,always -F msgtype=USER_END
+-a exclude,always -F msgtype=USER_LABELED_EXPORT
+-a exclude,always -F msgtype=USER_LOGIN
+-a exclude,always -F msgtype=USER_LOGOUT
+-a exclude,always -F msgtype=USER_MAC_POLICY_LOAD
+-a exclude,always -F msgtype=USER_MGMT
+-a exclude,always -F msgtype=USER_ROLE_CHANGE
+-a exclude,always -F msgtype=USER_SELINUX_ERR
+-a exclude,always -F msgtype=USER_START
+# May be used by/with pam_audit_tty
+# -a exclude,always -F msgtype=USER_TTY
+-a exclude,always -F msgtype=USER_UNLABELED_EXPORT
+-a exclude,always -F msgtype=USYS_CONFIG
+-a exclude,always -F msgtype=VIRT_CONTROL
+-a exclude,always -F msgtype=VIRT_MACHINE_ID
+-a exclude,always -F msgtype=VIRT_RESOURCE
